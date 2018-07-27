@@ -1,0 +1,12 @@
+/*顶部logo*/
+.headLogo{width: 100%;height: 51px;background-color: #2CA2F9;position: fixed;top: 0;padding: 10px}
+.headLogo .logo{float: left;height: 100%}
+.headLogo .search{float: right;height: 100%;padding: 3px}
+.headLogo img{height: 100%}
+/*nav标签*/
+.headNav{position: fixed;top: 51px;left: 0;width: 100%;border-bottom: 1px solid #e4e4e4}
+.mint-tab-item-label{font-size: 16px;}
+.mint-tab-item{text-decoration: none!important;}
+
+/*列表*/
+.main{margin-top: 102px}
