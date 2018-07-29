@@ -5,13 +5,16 @@ import App from './App'
 import router from './router'
 import store from './store'
 import mint from 'mint-ui'
-import axios from 'axios'
+// import axios from 'axios'
 import 'mint-ui/lib/style.css'
 import './assets/css/neat-min.css'
 import './assets/css/style.css'
+const vueResource = require('vue-resource')
+
 
 Vue.use(mint)
-Vue.prototype.$http = axios
+Vue.use(vueResource)
+// Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
 
