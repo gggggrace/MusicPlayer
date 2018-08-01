@@ -7,6 +7,33 @@
 .headNav{position: fixed;top: 51px;left: 0;width: 100%;border-bottom: 1px solid #e4e4e4;z-index: 100}
 .mint-tab-item-label{font-size: 16px;}
 .mint-tab-item{text-decoration: none!important;}
+.mint-navbar{padding: 0 10px}
 
 /*列表*/
-.main{margin-top: 102px}
+.main{margin-top: 102px;margin-bottom: 65px;transition: all .5s;-webkit-transition: all .5s;}
+.marginBtm0{margin-bottom: 0}
+.mint-cell{padding-left: 10px}
+.mint-cell-wrapper{padding: 10px 5px;background-image: none;border-bottom: 1px solid #e8e8e8;font-size: 14px}
+.pList .mint-cell-text{position: absolute;left: 90px;top: 23px;overflow: hidden;padding-right: 40px;height: 16px;line-height: 16px;font-size: 14px;}
+.pList .mint-cell-label{position: absolute;left: 90px;top: 38px}
+.pList .mint-cell-label:before{content: '';display: inline-block;width: 12px;height: 12px;background: url("../images/icon_music.png") no-repeat center;background-size: 100%;margin-right: 5px;}
+.singer{padding: 0 10px;width: 100%;overflow: hidden}
+.cell-group {margin: 15px 0;width: 100%;border: 1px solid #e4e4e4;border-radius: 5px;background-color: #fbfbfb;}
+.cell-item {padding: 12px 15px;font-size: 15px;border-bottom: 1px solid #e4e4e4;position: relative;}
+.cell-item:last-of-type {border: none;}
+.cell-item:after{content: '';display: block;position: absolute;width: 12px;height: 100%;background: url("../images/arrow_icon.png") no-repeat center;background-size: 12px;top: 0;right: 15px}
+
+/*Player*/
+.player{position: fixed;bottom: 0;left: 0;width: 100%;transition: all .5s;-webkit-transition: all .5s;}
+.audioControl{width: 35px;height: 35px;border-radius: 50%;background: rgba(0,0,0,.8) url('../images/close_icon.png') no-repeat center;background-size: 25px;margin-left: 10px;margin-bottom: 10px;overflow: hidden;}
+.audioPanelHide .audioControl{background: rgba(0,0,0,.8) url('../images/open_icon.png') no-repeat center;background-size: 25px;}
+.audioPanelHide{bottom: -65px;}
+.audioPanel{z-index: 999;width: 100%;height: 64px;background-color: rgba(0,0,0,0.8);padding: 7px;}
+.panelImg{height: 100%;float: left}
+.playerDetail{float: left;color: #fff;padding: 7px 10px;width: 50%}
+.playerTitle{font-size: 16px;margin-bottom: 2px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.playerControl{float: right;width: 30%;height: 100%}
+.playerControl span{width: 45%;height: 100%;display: inline-block;}
+.playerPlay{background: url('../images/play_icon.png') no-repeat center;background-size: auto 72%;}
+.playerPause{background: url('../images/pause_icon.png') no-repeat center;background-size: auto 72%;}
+.playerNext{background: url('../images/next_icon.png') no-repeat center;background-size: auto 70%;}

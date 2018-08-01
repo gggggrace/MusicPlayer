@@ -9,7 +9,8 @@ Vue.use(vueResource)
 const router = new Router({
   routes: [{
       path: '/newSongs',
-      component: require('../views/newSongs').default
+      component: require('../views/newSongs').default,
+      alias:"/"
     }, {
       path: '/rank',
       component: require('../views/rank').default

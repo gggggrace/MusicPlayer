@@ -28,7 +28,7 @@
       goRouter(index){
         switch (index) {
           case 1:
-            this.$router.push({path: '/newSongs'});
+            this.$router.push({path: '/'});
             break;
           case 2:
             this.$router.push({path: '/rank'});

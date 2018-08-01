@@ -8,26 +8,29 @@
 
 <script>
   import rank from '../jsons/rank'
-export default {
-  data(){
-    return {
-      rankList: []
-    }
-  },
-  created(){
-    this.getRank()
-  },
-  methods: {
-    getRank(){
-      this.rankList = rank.rankList.list
+  export default {
+    data(){
+      return {
+        rankList: []
+      }
+    },
+    created(){
+      this.getRank()
+    },
+    methods: {
+      getRank(){
+        this.rankList = rank.rankList.list
+      }
     }
   }
-}
 </script>
 
 <style>
   .rank .mint-cell-wrapper{
-    padding: 10px 5px;
+    font-size: 16px;
+  }
+  .rank .mint-cell-wrapper img{
+    margin-right: 10px;
   }
 </style>
 

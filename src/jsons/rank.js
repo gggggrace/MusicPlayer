@@ -5,7 +5,8 @@ export default
 {
     "rankList": {
         "total": 27,
-        "list": [{
+        "list": [
+          {
             "rankid": 6666,
             "id": 1,
             "update_frequency": "\u6bcf\u5929",

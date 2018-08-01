@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Head />
-    <div class="main">
+    <div class="main" :class="{'marginBtm0':togglePlayerHide}">
       <keep-alive>
         <router-view></router-view>
       </keep-alive>
@@ -12,10 +12,15 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex'
   import Head from './components/header/Head'
+  import Player from './components/Player'
   export default {
     components:{
-      Head
+      Head,Player
+    },
+    computed: {
+      ...mapGetters(['togglePlayerHide'])
     }
   }
 </script>
