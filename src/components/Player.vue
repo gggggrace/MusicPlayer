@@ -12,7 +12,7 @@
         </div>
         <div class="playerControl">
           <span class="playerPlay" :class="{'playerPause':isPlay}" @click="togglePlay"></span>
-          <span class="playerNext"></span>
+          <span class="playerNext" @click="next()"></span>
         </div>
       </div>
     </div>
@@ -41,6 +41,9 @@
           document.getElementById("audioPlay").play();
         }
         this.$store.commit('isPlay', !this.isPlay);
+      },
+      next(){
+        this.$store.dispatch('next');
       }
     }
   }

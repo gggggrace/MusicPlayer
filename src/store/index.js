@@ -53,6 +53,9 @@ const store = new Vuex.Store({
         commit('setAudio',audio)
         commit('isPlay',true)
       })
+    },
+    next(){
+
     }
   }
 });
