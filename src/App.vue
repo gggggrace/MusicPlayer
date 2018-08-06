@@ -15,9 +15,10 @@
   import { mapGetters } from 'vuex'
   import Head from './components/header/Head'
   import Player from './components/Player'
+  import DetailPlayer from './components/DetailPlayer.vue'
   export default {
     components:{
-      Head,Player
+      Head,Player,DetailPlayer
     },
     computed: {
       ...mapGetters(['togglePlayerHide'])

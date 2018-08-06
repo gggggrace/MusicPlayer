@@ -5,14 +5,14 @@
       <div class="audioControl" @click="togglePanel"></div>
       <!--底部播放悬浮框-->
       <div class="audioPanel">
-        <img class="panelImg" :src="audio.imgUrl"  alt="">
-        <div class="playerDetail">
+        <img class="panelImg" :src="audio.imgUrl"  alt="" @click="showDetailPlayer">
+        <div class="playerDetail" @click="showDetailPlayer">
           <p class="playerTitle">{{audio.title}}</p>
           <p class="playerSinger">{{audio.singer}}</p>
         </div>
         <div class="playerControl">
           <span class="playerPlay" :class="{'playerPause':isPlay}" @click="togglePlay"></span>
-          <span class="playerNext" @click="next()"></span>
+          <span class="playerNext" @click="next"></span>
         </div>
       </div>
     </div>
@@ -28,7 +28,7 @@
       }
     },
     computed: {
-        ...mapGetters(['audio','togglePlayerHide','isPlay']),
+        ...mapGetters(['audio','togglePlayerHide','isPlay','firstEnter']),
     },
     methods: {
       togglePanel(){
@@ -41,6 +41,11 @@
           document.getElementById("audioPlay").play();
         }
         this.$store.commit('isPlay', !this.isPlay);
+      },
+      showDetailPlayer(){
+        if(this.firstEnter){
+          this.$store.commit('detailPlayerShow',true)
+        }
       },
       next(){
         this.$store.dispatch('next');
