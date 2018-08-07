@@ -1,6 +1,6 @@
 <template>
     <div class="player" :class="{'audioPanelHide':togglePlayerHide}">
-      <audio :src="audio.songUrl" id="audioPlay"  autoplay></audio>
+      <audio :src="audio.songUrl" id="audioPlay"  autoplay @timeupdate="change" @ended="next" @error="next"></audio>
       <!--显示隐藏底部播放悬浮框按钮-->
       <div class="audioControl" @click="togglePanel"></div>
       <!--底部播放悬浮框-->
@@ -49,6 +49,15 @@
       },
       next(){
         this.$store.dispatch('next');
+      },
+      change(){
+        var time = document.getElementById("audioPlay").currentTime;
+        if(this.audio.changeCurFlag){
+          document.getElementById("audioPlay").currentTime = this.audio.curLength;
+          this.$store.commit('setCurrent',false);
+        }else{
+          this.$store.commit('setAudioTime',time);
+        }
       }
     }
   }

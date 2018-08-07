@@ -7,7 +7,8 @@
 </template>
 
 <script>
-  import rank from '../jsons/rank'
+  import { Indicator } from 'mint-ui'
+  import axios from 'axios'
   export default {
     data(){
       return {
@@ -19,7 +20,15 @@
     },
     methods: {
       getRank(){
-        this.rankList = rank.rankList.list
+        Indicator.open({
+          text: '加载中...',
+          spinnerType: 'snake'
+        });
+        axios.get(`/songList/rank/list&json=true`).then(({data})=>{
+          Indicator.close();
+          this.rankList = data.rank.list
+        })
+
       }
     }
   }

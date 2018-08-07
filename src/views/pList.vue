@@ -8,7 +8,8 @@
 </template>
 
 <script>
-  import pListData from '../jsons/pList'
+  import { Indicator } from 'mint-ui'
+  import axios from 'axios'
   export default {
     data(){
       return {
@@ -20,16 +21,18 @@
     },
     methods: {
       getPList:function () {
-        this.pLists = pListData.plist
+        Indicator.open({
+          text: '加载中...',
+          spinnerType: 'snake'
+        });
+        axios.get(`/songList/plist/index&json=true`).then(({data})=>{
+          Indicator.close();
+          this.pLists = data.plist.list.info
+        })
       }
     }
   }
 </script>
 
-<style>
-  .pList .mint-cell-wrapper{
-
-  }
-</style>
 
 

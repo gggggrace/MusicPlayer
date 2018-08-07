@@ -18,12 +18,14 @@ const store = new Vuex.Store({
       title:'',
       singer:'',
       songLength:'',
-      curLength:''
+      curLength:'',
+      changeCurFlag:false
     },
     listInfo: { //存储当前播放歌曲信息和序号
       list:[],
       index:0
-    }
+    },
+
   },
   getters: {
     headNav: state => state.headNav,
@@ -56,6 +58,12 @@ const store = new Vuex.Store({
       state.count ++;
       state.audio = {...(state.audio),...audio}
     },
+    setAudioTime: (state,time) => {
+      state.audio.curLength = time;
+    },
+    setCurrent: (state,flag) => {
+      state.audio.changeCurFlag = flag;
+    },
     setlistInfo: (state,{list,index}) =>{
       state.listInfo.list = list;
       state.listInfo.index =index;
@@ -67,7 +75,7 @@ const store = new Vuex.Store({
   },
   actions: {
     getSong({commit,state},hash){
-      axios.get(`/songList/yy/index.php?r=play/getdata&hash=${hash}`).then(({data})=>{
+      axios.get(`/songInfo/yy/index.php?r=play/getdata&hash=${hash}`).then(({data})=>{
         data = data.data;
         const songUrl = data.play_url;
         const imgUrl = data.img;
@@ -76,15 +84,6 @@ const store = new Vuex.Store({
         const songLength = data.timelength / 1000;
         const curLength = 0;
         const lrc = data.lyrics;
-        console.log(1111,lrc);
-        var temp = lrc.split('\r\n');
-        // temp = temp.splice(0, temp.length - 1)
-        console.log(222,temp)
-        // setTimeout(function () {
-        //   var temp2 = temp.splice(0, temp.length - 1)
-        //   console.log(333,temp2)
-        // },500)
-
         const audio = {songUrl,imgUrl,title,singer,songLength,curLength};
         commit('setAudio',audio);
         commit('isPlay',true);

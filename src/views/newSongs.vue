@@ -14,8 +14,9 @@
 </template>
 
 <script>
-    import songs from '../jsons/newSongs'
+    import { Indicator } from 'mint-ui'
     import { PLAY_AUDIO } from '../mixins'
+    import axios from 'axios'
     export default {
       mixins: [PLAY_AUDIO],
       data(){
@@ -29,8 +30,15 @@
       },
       methods: {
           getSongs(){
-              this.songList = songs.songList;
-              this.bannerList = songs.banner;
+            Indicator.open({
+              text: '加载中...',
+              spinnerType: 'snake'
+            });
+            axios.get(`/songList/?json=true`).then(({data})=>{
+              Indicator.close();
+              this.songList = data.data;
+              this.bannerList = data.banner;
+            })
           }
       }
     }

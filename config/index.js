@@ -11,13 +11,20 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/songList': {
+      '/songInfo': {
         target: 'http://www.kugou.com',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/songInfo': ''
+        }
+      },
+      '/songList': {
+        target: 'http://m.kugou.com',
         changeOrigin: true,
         pathRewrite: {
           '^/songList': ''
         }
-      }
+      },
     },
 
     // Various Dev Server settings
