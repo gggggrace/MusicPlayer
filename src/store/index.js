@@ -25,6 +25,11 @@ const store = new Vuex.Store({
       list:[],
       index:0
     },
+    rankHead:{
+      toggle:false,
+      title:"",
+      style:{'background': 'rgba(43,162,251,0)'}
+    }
 
   },
   getters: {
@@ -33,7 +38,8 @@ const store = new Vuex.Store({
     detailPlayerShow: state => state.detailPlayerShow,
     isPlay: state => state.isPlay,
     audio: state => state.audio,
-    firstEnter: state => state.firstEnter
+    firstEnter: state => state.firstEnter,
+    rankHead: state => state.rankHead
   },
   mutations: {
     setHeadNav: (state,nav) => {
@@ -70,6 +76,15 @@ const store = new Vuex.Store({
     },
     setLrc: (state,lrc) => {
       state.audio = {...(state.audio),lrc}
+    },
+    showRankHead: (state,flag) => {
+      state.rankHead.toggle = flag;
+    },
+    setRankHeadTitle: (state,title) => {
+      state.rankHead.title = title;
+    },
+    setRankHeadStyle: (state,style) => {
+      state.rankHead.style = style;
     }
 
   },
@@ -107,8 +122,11 @@ const store = new Vuex.Store({
       }else {
         state.listInfo.index++;
       }
-      const hash = list[state.listInfo.index].hash;
-      dispatch('getSong',hash)
+      if(state.count != 0){  //首次进入未播放任何歌曲，故没有下一首歌曲信息，为防止报错添加条件判断
+        const hash = list[state.listInfo.index].hash;
+        dispatch('getSong',hash)
+      }
+
     }
   }
 });

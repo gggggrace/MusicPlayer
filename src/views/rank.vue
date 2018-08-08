@@ -1,6 +1,6 @@
 <template>
   <div class="rank">
-    <mt-cell v-for="(rank,index) in rankList" :title = "rank.rankname" :key="index" is-link>
+    <mt-cell v-for="(rank,index) in rankList" :title = "rank.rankname" :key="index" is-link :to="`/rank/info/${rank.rankid}`">
       <img slot="icon" :src="rank.imgurl.replace('{size}','400')" width="60" height="60">
     </mt-cell>
   </div>

@@ -15,12 +15,15 @@ const router = new Router({
       path: '/rank',
       component: require('../views/rank').default
     }, {
-    path: '/pList',
-    component: require('../views/pList').default
-  }, {
-    path: '/singer',
-    component: require('../views/singer').default
-  }
+      path: '/rank/info/:id',
+      component: require('../views/rankInfo').default
+    }, {
+      path: '/pList',
+      component: require('../views/pList').default
+    }, {
+      path: '/singer',
+      component: require('../views/singer').default
+    }
   ]
 });
 export default router
