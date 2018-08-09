@@ -21,8 +21,17 @@ const router = new Router({
       path: '/pList',
       component: require('../views/pList').default
     }, {
+      path: '/pList/info/:id',
+      component: require('../views/plistInfo').default
+    }, {
       path: '/singer',
       component: require('../views/singer').default
+    }, {
+        path: '/singer/list/:id',
+       component: require('../views/singerList').default
+    }, {
+      path: '/singer/info/:id',
+      component: require('../views/singerInfo').default
     }
   ]
 });

@@ -1,6 +1,6 @@
 <template>
   <div class="pList">
-    <mt-cell v-for="(pList,index) in pLists" :title="pList.specialname" :key="index" is-link :label="String(pList.playcount)">
+    <mt-cell v-for="(pList,index) in pLists" :title="pList.specialname" :key="index" is-link :to="`/plist/info/${pList.specialid}`" :label="String(pList.playcount)">
       <img :src="pList.imgurl.replace('{size}','400')" slot="icon" width="60" height="60">
 
     </mt-cell>
