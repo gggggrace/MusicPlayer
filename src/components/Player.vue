@@ -38,7 +38,7 @@
         if(this.isPlay){
           document.getElementById("audioPlay").pause();
         } else {
-          document.getElementById("audioPlay【").play();
+          document.getElementById("audioPlay").play();
         }
         this.$store.commit('isPlay', !this.isPlay);
       },
@@ -54,6 +54,7 @@
         var time = document.getElementById("audioPlay").currentTime;
         if(this.audio.changeCurFlag){
           document.getElementById("audioPlay").currentTime = this.audio.curLength;
+          document.getElementsByClassName("")
           this.$store.commit('setCurrent',false);
         }else{
           this.$store.commit('setAudioTime',time);

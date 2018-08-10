@@ -54,9 +54,6 @@ const store = new Vuex.Store({
     isPlay: (state,flag) =>{
       state.isPlay = flag;
     },
-    // firstEnter: (state,flag) => {
-    //   state.firstEnter = flag;
-    // },
     setAudio: (state,audio) => {
       if(state.count == 0){ //首次进入不可进入播放详情
         state.firstEnter = true;
