@@ -25,6 +25,13 @@ module.exports = {
           '^/songList': ''
         }
       },
+      '/searchList': {
+        target: 'http://mobilecdn.kugou.com',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/searchList': ''
+        }
+      }
     },
 
     // Various Dev Server settings

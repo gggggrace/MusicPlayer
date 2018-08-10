@@ -32,6 +32,9 @@ const router = new Router({
     }, {
       path: '/singer/info/:id',
       component: require('../views/singerInfo').default
+    }, {
+      path: '/search',
+      component: require('../views/search').default
     }
   ]
 });

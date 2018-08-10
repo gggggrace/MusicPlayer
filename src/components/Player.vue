@@ -38,7 +38,7 @@
         if(this.isPlay){
           document.getElementById("audioPlay").pause();
         } else {
-          document.getElementById("audioPlay").play();
+          document.getElementById("audioPlay【").play();
         }
         this.$store.commit('isPlay', !this.isPlay);
       },

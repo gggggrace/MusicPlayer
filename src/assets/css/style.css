@@ -78,3 +78,14 @@
 .plistDetail .plistDetailShow{background: url("../images/close_icon.png") no-repeat center;background-size: 100% 100%;width: 24px;height: 24px;position: absolute;right: 10px;top: 10px;}
 .showDetail p{height: auto}
 .showDetail .plistDetailShow{background: url("../images/open_icon.png") no-repeat center;background-size: 100% 100%;width: 24px;height: 24px;position: absolute;right: 10px;top: 10px;}
+
+
+/*search*/
+.searchPanel{height:55px;padding: 10px;display: flex;}
+.searchInput{width: 80%;border: 1px solid #e5e5e5;border-radius: 5px;}
+.searchInput input{width: 85%;border: none;padding: 0 10px 0 0;display: inline-block;vertical-align: middle;height: 100%;outline:none;}
+.searchPanel .searchIcon{display: inline-block;width: 10%;height: 100%;background: url("http://m.kugou.com/v3/static/images/index/search_icon.png") no-repeat center;background-size: auto 100%;margin-right: 5px;vertical-align: middle}
+.searchBtn{border: none;background: #2ba2fa;color: #fff;border-radius: 5px;width: 18%;margin-left: 10px;}
+.hot p{padding: 10px;color: deepskyblue;}
+.searchTotal{padding: 5px 10px;background-color: #e1e1e1;color: #484848;}
+.backSearch{float: right;color: #999}
