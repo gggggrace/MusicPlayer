@@ -10,8 +10,6 @@ import 'mint-ui/lib/style.css'
 import './assets/css/neat-min.css'
 import './assets/css/style.css'
 Vue.use(mint)
-var root = process.env.API;
-axios.baseURL = root;
 // Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
